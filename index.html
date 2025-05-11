@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,18 +24,35 @@
       --font-2: Arimo, sans-serif;
     }
 
-    :before, :after {
-      content: '';
-      position: absolute;
-    }
-
     a {
-      display: inline-block;
       text-decoration: none;
+      color: #fff;
     }
 
     span {
       display: inline-block;
+    }
+
+    .menu {
+      width: 100%;
+      background: #111;
+      padding: 10px 0;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .menu a {
+      margin: 0 15px;
+      font-family: var(--font-1);
+      font-size: 1rem;
+      padding: 8px 16px;
+      background-color: #e787c4;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: #d06dab;
     }
 
     #jd-main, .jd-app {
@@ -77,6 +93,32 @@
 
     .jd-banner img {
       width: 100%;
+    }
+
+    .jd-btn {
+      position: absolute;
+      width: 120px;
+      height: 32px;
+      right: 30px;
+      top: 30px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      z-index: 100;
+      overflow: hidden;
+    }
+
+    .jd-btn a {
+      width: 120px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      color: #FFF;
+      text-transform: uppercase;
+      font-family: var(--font-2);
+      font-size: .8rem;
+      transition: all .3s linear;
     }
 
     .jd-content {
@@ -151,14 +193,6 @@
       color: #FFF;
     }
 
-    .jd-btn-nav:after {
-      width: 100%;
-      height: 2px;
-      background: #00e6e6;
-      left: 0;
-      bottom: 0;
-    }
-
     .jd-btn-nav span {
       font-size: .9rem;
     }
@@ -203,7 +237,6 @@
       height: 30px;
       background: #212121;
       line-height: 40px;
-      height: 40px;
       text-align: center;
       font-size: .7rem;
       margin-top: 40px;
@@ -248,6 +281,13 @@
 </head>
 <body>
 
+<!-- MENIU -->
+<div class="menu">
+  <a href="home.html">Home</a>
+  <a href="pstyle.html">PStyle</a>
+</div>
+
+<!-- CONTINUTUL PAGINII TALE -->
 <div id="NotAllowedme"> 
   <div id="jd-main"> 
     <div id="-jd_1"> 
@@ -267,40 +307,29 @@
                   <img src="https://xatimg.com/image/Xs9X2ZJku3NG.png"> 
                 </div> 
                 <div class="jd-navigator"> 
-                  <a class="jd-btn-nav" href="https://xat.me/stellina80">
+                  <a class="jd-btn-nav" href="https://xat.me/stellina80"> 
                     <span>PiccolaWendiGif</span> 
                     <p>1498089441</p> 
-                  </a> 
-                  <a class="jd-btn-nav" href="#"> 
-                    <span></span> 
-                    <p></p> 
-                  </a> 
-                  <a class="jd-btn-nav" href="#"> 
-                    <span></span> 
-                    <p></p> 
                   </a> 
                 </div> 
               </div> 
             </div> 
           </div> 
-
           <div class="jd-content"> 
-            <span style="color:#A5B3B3">----------------------------------------------- GIF MODELS -----------------------------------------------</span><p></p> 
-
-            <!-- Exemplu cu un model -->
+            <span style="color:#A5B3B3">----------------------------------------------- GIF MODELS -----------------------------------------------------------------------------------------------------------------------------------</span><p></p> 
+            <!-- Adaugă box-urile tale cu imagini GIF aici -->
             <div class="jd-box"> <img src=".gif"><span>BT-58</span></div>
             <div class="jd-box"> <img src=".gif"><span>BT-42</span></div>
             <div class="jd-box"> <img src=".gif"><span>BT-51</span></div>
-            <!-- Adaugă mai multe modele aici -->
-
-            <div class="jd-footer">PiccolaWendiGif 1498089441</div>
+            <!-- Continuă cu restul box-urilor -->
           </div> 
-
+          <div class="jd-footer"> 
+            PiccolaWendiGif 1498089441
+          </div> 
           <div class="jd-video"> 
             <span>Musica Que Alegra</span> 
             <div class="jd-videoBox"></div> 
           </div> 
-
         </div> 
       </div> 
     </div> 

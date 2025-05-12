@@ -13,111 +13,127 @@
     }
 
     body {
-      background-color: #111;
+      background-color: #0f0f0f;
       color: white;
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     header {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
-      background: #1c1c2e;
-      text-align: center;
-      padding: 20px;
+      background-color: #1a1f2b;
+      padding: 15px;
       z-index: 1000;
-    }
-
-    header img.avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border: 3px solid #00aaff;
-      margin-bottom: 10px;
+      text-align: center;
+      border-bottom: 2px solid #3a4b61;
     }
 
     header h1 {
-      font-size: 28px;
+      margin-bottom: 5px;
+      font-size: 24px;
+      color: #69a7d4;
     }
 
     header p {
       font-size: 14px;
-      color: #ccc;
+      color: #aaa;
     }
 
-    nav#jd-content {
+    nav {
       position: fixed;
-      top: 160px;
-      width: 100%;
-      background-color: #2a2a3b;
-      text-align: center;
-      padding: 10px 0;
-      z-index: 999;
-    }
-
-    nav#jd-content a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav#jd-content a:hover {
-      color: #00aaff;
-    }
-
-    .page-container {
-      position: absolute;
-      top: 220px;
-      bottom: 40px;
+      top: 80px;
       left: 0;
-      right: 0;
-      overflow-y: auto;
+      width: 100%;
+      background-color: #283747;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      z-index: 999;
+      border-bottom: 2px solid #3a4b61;
+    }
+
+    nav button {
+      background-color: #3b5165;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav button:hover {
+      background-color: #5a7a96;
+    }
+
+    .content {
+      margin-top: 160px;
       padding: 20px;
     }
 
-    .content-box {
-      background: #2a2a3b;
-      border-radius: 10px;
-      padding: 10px;
-      margin: 20px auto;
-      width: fit-content;
-      box-shadow: 0 0 10px rgba(0,0,0,0.6);
-      animation: fadeIn 0.8s ease-in;
+    .page {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
     }
 
-    .content-box img {
+    .page.active {
       display: block;
-      max-width: 100%;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: #2f3e4d;
+      border-radius: 15px;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      display: block;
+      border-radius: 10px;
+      width: 100%;
       height: auto;
     }
 
-    .gif-box img {
+    .gif-card {
       width: 200px;
-      height: 200px;
     }
 
-    .pstyle-box img {
+    .pstyle-card {
       width: 300px;
       height: 100px;
     }
 
-    .pcback-box img {
+    .pcback-card {
       width: 728px;
       height: 484px;
     }
 
     footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: #2a2a3b;
+      background-color: #283747;
+      color: #bbb;
       text-align: center;
-      padding: 10px;
-      color: #aaa;
-      font-size: 12px;
-      z-index: 998;
+      padding: 15px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      z-index: 1000;
+      border-top: 2px solid #3a4b61;
     }
 
     @keyframes fadeIn {
@@ -128,67 +144,53 @@
 </head>
 <body>
   <header>
-    <img src="https://xatimg.com/image/f7mg2bfTsSce.png" alt="Avatar" class="avatar" />
     <h1>Error</h1>
     <p>ID: ErrorJunior (213915685)</p>
   </header>
 
-  <nav id="jd-content">
-    <a href="#home" onclick="showPage('home')">Home</a>
-    <a href="#pstyle" onclick="showPage('pstyle')">PStyle</a>
-    <a href="#pcback" onclick="showPage('pcback')">PcBack</a>
+  <nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('pstyle')">PStyle</button>
+    <button onclick="showPage('pcback')">PcBack</button>
   </nav>
 
-  <div class="page-container">
-    <div id="home" class="page">
-      <div class="content-box gif-box">
-        <img src="https://xatimg.com/image/KiwKngXTTx6p.gif" />
-      </div>
-      <div class="content-box gif-box">
-        <img src="https://xatimg.com/image/KiwKngXTTx6p.gif" />
-      </div>
-      <div class="content-box gif-box">
-        <img src="https://xatimg.com/image/KiwKngXTTx6p.gif" />
+  <div class="content">
+    <div id="home" class="page active">
+      <div class="gallery">
+        <div class="card gif-card"><img src="https://xatimg.com/image/KiwKngXTTx6p.gif" alt="gif"></div>
+        <div class="card gif-card"><img src="https://xatimg.com/image/KiwKngXTTx6p.gif" alt="gif"></div>
+        <div class="card gif-card"><img src="https://xatimg.com/image/KiwKngXTTx6p.gif" alt="gif"></div>
       </div>
     </div>
 
-    <div id="pstyle" class="page" style="display: none;">
-      <div class="content-box pstyle-box">
-        <img src="https://xatimg.com/image/QXaAZtDQ0vUI.png" />
-      </div>
-      <div class="content-box pstyle-box">
-        <img src="https://xatimg.com/image/QXaAZtDQ0vUI.png" />
-      </div>
-      <div class="content-box pstyle-box">
-        <img src="https://xatimg.com/image/QXaAZtDQ0vUI.png" />
+    <div id="pstyle" class="page">
+      <div class="gallery">
+        <div class="card pstyle-card"><img src="https://xatimg.com/image/QXaAZtDQ0vUI.png" alt="pstyle"></div>
+        <div class="card pstyle-card"><img src="https://xatimg.com/image/QXaAZtDQ0vUI.png" alt="pstyle"></div>
+        <div class="card pstyle-card"><img src="https://xatimg.com/image/QXaAZtDQ0vUI.png" alt="pstyle"></div>
       </div>
     </div>
 
-    <div id="pcback" class="page" style="display: none;">
-      <div class="content-box pcback-box">
-        <img src="https://xatimg.com/image/nkaHRxWK4lGq.png" />
-      </div>
-      <div class="content-box pcback-box">
-        <img src="https://xatimg.com/image/nkaHRxWK4lGq.png" />
-      </div>
-      <div class="content-box pcback-box">
-        <img src="https://xatimg.com/image/nkaHRxWK4lGq.png" />
-      </div>
-      <div class="content-box pcback-box">
-        <img src="https://xatimg.com/image/5gTd1NtVWxae.png" />
+    <div id="pcback" class="page">
+      <div class="gallery">
+        <div class="card pcback-card"><img src="https://xatimg.com/image/nkaHRxWK4lGq.png" alt="pcback"></div>
+        <div class="card pcback-card"><img src="https://xatimg.com/image/nkaHRxWK4lGq.png" alt="pcback"></div>
+        <div class="card pcback-card"><img src="https://xatimg.com/image/5gTd1NtVWxae.png" alt="pcback"></div>
       </div>
     </div>
   </div>
 
   <footer>
-    &copy; 2025 ErrorJunior. All rights reserved.
+    &copy; 2025 Error. All rights reserved.
   </footer>
 
   <script>
     function showPage(pageId) {
       const pages = document.querySelectorAll('.page');
-      pages.forEach(page => page.style.display = 'none');
-      document.getElementById(pageId).style.display = 'block';
+      pages.forEach(page => {
+        page.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
     }
   </script>
 </body>

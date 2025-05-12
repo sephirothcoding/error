@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,14 +30,17 @@
 
     .jd-content {
       display: flex;
-      justify-content: space-between;
+      flex-direction: row;
+      justify-content: center;
       align-items: center;
       background-color: #2e3b55;
       padding: 10px 30px;
       position: fixed;
-      top: 60px;
+      top: 15%;
+      left: 0;
       width: 100%;
       z-index: 998;
+      gap: 30px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
@@ -48,11 +52,13 @@
       background-image: url('https://xatimg.com/image/f7mg2bfTsSce.png');
       background-size: cover;
       background-position: center;
+      flex-shrink: 0;
     }
 
     nav {
       display: flex;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -70,13 +76,16 @@
     }
 
     .content {
-      padding: 140px 20px 60px;
+      padding-top: 220px; /* spațiu mai mare pentru header + jd-content */
+      padding-bottom: 60px;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
     .section {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
       animation: fadeIn 1s ease-in-out;
     }
@@ -125,6 +134,22 @@
       to {opacity: 1; transform: translateY(0);}
     }
 
+    @media (max-width: 768px) {
+      .jd-content {
+        flex-direction: column;
+        top: 20%;
+        gap: 15px;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .pcback-box img {
+        width: 100%;
+        height: auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -144,6 +169,8 @@
 
   <div id="home" class="content page">
     <div class="section">
+      <div class="gif-box"><img src="https://xatimg.com/image/KiwKngXTTx6p.gif" alt="gif" /></div>
+      <div class="gif-box"><img src="https://xatimg.com/image/KiwKngXTTx6p.gif" alt="gif" /></div>
       <div class="gif-box"><img src="https://xatimg.com/image/KiwKngXTTx6p.gif" alt="gif" /></div>
       <div class="gif-box"><img src="https://xatimg.com/image/KiwKngXTTx6p.gif" alt="gif" /></div>
       <div class="gif-box"><img src="https://xatimg.com/image/KiwKngXTTx6p.gif" alt="gif" /></div>

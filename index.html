@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
   <meta charset="UTF-8">
   <title>Home - Error</title>
   <style>
     body {
-      background-image: url('https://xatimg.com/image/HgFAuqlz3VUL.png');
+      background-image: url('https://xatimg.com/image/oNRwyF0WEjkh.png');
       background-repeat: no-repeat;
-      background-size: 100% 100%;
+      background-size: cover;
       background-position: center center;
       overflow-x: hidden;
       margin: 0;
+      font-family: 'Oswald', sans-serif;
     }
 
     * {
@@ -19,28 +20,15 @@
       box-sizing: border-box;
     }
 
-    :root {
-      --font-1: Oswald, sans-serif;
-      --font-2: Arimo, sans-serif;
-    }
-
     a {
-      display: inline-block;
       text-decoration: none;
-    }
-
-    span {
-      display: inline-block;
+      color: inherit;
     }
 
     #jd-main, .jd-app {
-      position: relative;
       width: 100%;
-      height: auto;
       font-size: 16px;
-      font-family: var(--font-1);
       color: #e787c4;
-      overflow-x: hidden;
     }
 
     .jd-app {
@@ -85,7 +73,6 @@
     .jd-header h1 {
       text-align: center;
       margin-top: 80px;
-      display: inline-block;
       width: 100%;
       text-shadow: 5px 5px 4px rgba(0,0,0,0.5);
     }
@@ -98,7 +85,7 @@
       text-align: center;
       line-height: 36px;
       color: #D9D9D9;
-      margin-left: calc(50% - 100px);
+      margin: 10px auto;
     }
 
     .jd-bottom {
@@ -111,6 +98,7 @@
 
     .jd-bottom .jd-container {
       display: flex;
+      align-items: center;
     }
 
     .jd-user {
@@ -139,9 +127,7 @@
 
     .jd-navigator a {
       color: #fff;
-      font-family: var(--font-1);
       font-size: 1rem;
-      text-decoration: none;
       padding: 8px 16px;
       background: #333;
       border-radius: 4px;
@@ -156,7 +142,7 @@
     .jd-box {
       width: 110px;
       height: 130px;
-      background: #6da4d3; /* Albastru deschis masculin */
+      background: #6da4d3;
       box-shadow: 0 0 2px 1px rgba(0, 0, 0, .1);
       padding: 14px;
       margin-bottom: 20px;
@@ -172,7 +158,7 @@
     .jd-box span {
       width: 82px;
       height: 19px;
-      background: #3b3b3b; /* Gri închis */
+      background: #3b3b3b;
       text-align: center;
       line-height: 19px;
       text-transform: uppercase;
@@ -214,6 +200,7 @@
       font-size: .75rem;
       color: #8E119B;
       background: #212121;
+      display: block;
     }
 
     .jd-videoBox {
@@ -225,6 +212,12 @@
     #jd_1:target .jd-video {
       transform: translateX(0);
     }
+
+    #pstyle-content {
+      width: 940px;
+      margin: 0 auto;
+      padding-top: 30px;
+    }
   </style>
 </head>
 <body>
@@ -232,7 +225,7 @@
     <div class="jd-app">
       <div class="jd-header">
         <div class="jd-banner">
-          <img src="https://xatimg.com/image/HgFAuqlz3VUL.png">
+          <img src="https://xatimg.com/image/oNRwyF0WEjkh.png" alt="Banner">
         </div>
         <div class="jd-container">
           <h1>GIF SHOP</h1>
@@ -241,11 +234,11 @@
         <div class="jd-bottom">
           <div class="jd-container">
             <div class="jd-user">
-              <img src="https://xatimg.com/image/Xs9X2ZJku3NG.png" alt="Avatar">
+              <img src="https://xatimg.com/image/f7mg2bfTsSce.png" alt="Avatar">
             </div>
             <div class="jd-navigator">
               <a href="home.html">Home</a>
-              <a href="pstyle.html">PStyle</a>
+              <a href="#" onclick="loadPstyle()">PStyle</a>
               <a href="https://xat.me/error">Error</a>
             </div>
           </div>
@@ -258,21 +251,24 @@
         </span>
         <p></p>
 
-        <div class="jd-box"> <img src=".gif"><span>BT-58</span></div>
-        <div class="jd-box"> <img src=".gif"><span>BT-42</span></div>
-        <div class="jd-box"> <img src=".gif"><span>BT-51</span></div>
-        <div class="jd-box"> <img src=".gif"><span>BT-61</span></div>
-        <div class="jd-box"> <img src=".gif"><span>BT-72</span></div>
-        <div class="jd-box"> <img src=".gif"><span>BT-41</span></div>
-        <div class="jd-box"> <img src=".gif"><span>BT-12</span></div>
-        <div class="jd-box"> <img src=".gif"><span>BT-33</span></div>
-        <div class="jd-box"> <img src=".gif"><span>BT-93</span></div>
-        <div class="jd-box"> <img src=".gif"><span>BT-89</span></div>
-        <div class="jd-box"> <img src=".gif"><span>BT-122</span></div>
-        <div class="jd-box"> <img src=".gif"><span>BT-164</span></div>
-        <div class="jd-box"> <img src=".gif"><span>BT-135</span></div>
-        <div class="jd-box"> <img src=".gif"><span>BT-150</span></div>
+        <div class="jd-box"> <img src=".gif" alt="BT-58"><span>BT-58</span></div>
+        <div class="jd-box"> <img src=".gif" alt="BT-42"><span>BT-42</span></div>
+        <div class="jd-box"> <img src=".gif" alt="BT-51"><span>BT-51</span></div>
+        <div class="jd-box"> <img src=".gif" alt="BT-61"><span>BT-61</span></div>
+        <div class="jd-box"> <img src=".gif" alt="BT-72"><span>BT-72</span></div>
+        <div class="jd-box"> <img src=".gif" alt="BT-41"><span>BT-41</span></div>
+        <div class="jd-box"> <img src=".gif" alt="BT-12"><span>BT-12</span></div>
+        <div class="jd-box"> <img src=".gif" alt="BT-33"><span>BT-33</span></div>
+        <div class="jd-box"> <img src=".gif" alt="BT-93"><span>BT-93</span></div>
+        <div class="jd-box"> <img src=".gif" alt="BT-89"><span>BT-89</span></div>
+        <div class="jd-box"> <img src=".gif" alt="BT-122"><span>BT-122</span></div>
+        <div class="jd-box"> <img src=".gif" alt="BT-164"><span>BT-164</span></div>
+        <div class="jd-box"> <img src=".gif" alt="BT-135"><span>BT-135</span></div>
+        <div class="jd-box"> <img src=".gif" alt="BT-150"><span>BT-150</span></div>
       </div>
+
+      <!-- Container pentru conținutul pstyle.html -->
+      <div id="pstyle-content"></div>
 
       <div class="jd-footer">
         Created by ErrorJunior (213915685) — All rights reserved ©
@@ -284,5 +280,21 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function loadPstyle() {
+      const container = document.getElementById('pstyle-content');
+      fetch('pstyle.html')
+        .then(response => response.text())
+        .then(data => {
+          container.innerHTML = data;
+          container.scrollIntoView({ behavior: 'smooth' });
+        })
+        .catch(error => {
+          container.innerHTML = '<p style="color:red;">Nu am putut încărca conținutul.</p>';
+          console.error('Eroare la încărcare:', error);
+        });
+    }
+  </script>
 </body>
 </html>

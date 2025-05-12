@@ -2,196 +2,182 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Error's Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Error's Page</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-
     body {
-      background-color: #0f0f0f;
-      color: white;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://xatimg.com/image/oNRwyF0WEjkh.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
       overflow-x: hidden;
     }
 
     header {
+      background: #1e1e2f;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
-      background-color: #1a1f2b;
-      padding: 15px;
-      z-index: 1000;
-      text-align: center;
-      border-bottom: 2px solid #3a4b61;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
     }
 
-    header h1 {
-      margin-bottom: 5px;
-      font-size: 24px;
-      color: #69a7d4;
+    .jd-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2e3b55;
+      padding: 10px 30px;
+      position: fixed;
+      top: 60px;
+      width: 100%;
+      z-index: 998;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
-    header p {
-      font-size: 14px;
-      color: #aaa;
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid #4d90fe;
+      background-image: url('https://xatimg.com/image/f7mg2bfTsSce.png');
+      background-size: cover;
+      background-position: center;
     }
 
     nav {
-      position: fixed;
-      top: 80px;
-      left: 0;
-      width: 100%;
-      background-color: #283747;
-      padding: 10px 0;
       display: flex;
-      justify-content: center;
       gap: 20px;
-      z-index: 999;
-      border-bottom: 2px solid #3a4b61;
     }
 
-    nav button {
-      background-color: #3b5165;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 10px;
-      transition: background-color 0.3s ease;
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background-color: #4d90fe;
+      transition: background 0.3s;
     }
 
-    nav button:hover {
-      background-color: #5a7a96;
+    nav a:hover {
+      background-color: #3a74c4;
     }
 
     .content {
-      margin-top: 160px;
-      padding: 20px;
+      padding: 140px 20px 60px;
     }
 
-    .page {
-      display: none;
-      animation: fadeIn 0.5s ease-in-out;
-    }
-
-    .page.active {
-      display: block;
-    }
-
-    .gallery {
+    .section {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
       gap: 20px;
-      justify-content: center;
-      margin-top: 20px;
+      animation: fadeIn 1s ease-in-out;
     }
 
-    .card {
-      background-color: #2f3e4d;
-      border-radius: 15px;
+    .gif-box, .pstyle-box, .pcback-box {
+      background-color: #34495e;
       padding: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
 
-    .card:hover {
-      transform: scale(1.05);
-    }
-
-    .card img {
-      display: block;
-      border-radius: 10px;
-      width: 100%;
+    .gif-box img {
+      width: 150px;
       height: auto;
+      border-radius: 10px;
     }
 
-    .gif-card {
-      width: 200px;
-    }
-
-    .pstyle-card {
+    .pstyle-box img {
       width: 300px;
       height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
     }
 
-    .pcback-card {
+    .pcback-box img {
       width: 728px;
       height: 484px;
+      object-fit: cover;
+      border-radius: 10px;
     }
 
     footer {
-      background-color: #283747;
-      color: #bbb;
+      background-color: #2e3b55;
       text-align: center;
       padding: 15px;
-      position: fixed;
-      width: 100%;
+      color: #aaa;
+      font-size: 14px;
+      position: relative;
       bottom: 0;
-      z-index: 1000;
-      border-top: 2px solid #3a4b61;
+      width: 100%;
+      margin-top: 40px;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
+
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Error</h1>
-    <p>ID: ErrorJunior (213915685)</p>
+    ErrorJunior (213915685)
   </header>
 
-  <nav>
-    <button onclick="showPage('home')">Home</button>
-    <button onclick="showPage('pstyle')">PStyle</button>
-    <button onclick="showPage('pcback')">PcBack</button>
-  </nav>
+  <div class="jd-content">
+    <div class="avatar"></div>
+    <nav>
+      <a href="#" onclick="showPage('home')">Home</a>
+      <a href="#" onclick="showPage('pstyle')">PStyle</a>
+      <a href="#" onclick="showPage('pcback')">PcBack</a>
+    </nav>
+  </div>
 
-  <div class="content">
-    <div id="home" class="page active">
-      <div class="gallery">
-        <div class="card gif-card"><img src="https://xatimg.com/image/KiwKngXTTx6p.gif" alt="gif"></div>
-        <div class="card gif-card"><img src="https://xatimg.com/image/KiwKngXTTx6p.gif" alt="gif"></div>
-        <div class="card gif-card"><img src="https://xatimg.com/image/KiwKngXTTx6p.gif" alt="gif"></div>
-      </div>
+  <div id="home" class="content page">
+    <div class="section">
+      <div class="gif-box"><img src="https://xatimg.com/image/KiwKngXTTx6p.gif" alt="gif" /></div>
+      <div class="gif-box"><img src="https://xatimg.com/image/KiwKngXTTx6p.gif" alt="gif" /></div>
+      <div class="gif-box"><img src="https://xatimg.com/image/KiwKngXTTx6p.gif" alt="gif" /></div>
     </div>
+  </div>
 
-    <div id="pstyle" class="page">
-      <div class="gallery">
-        <div class="card pstyle-card"><img src="https://xatimg.com/image/QXaAZtDQ0vUI.png" alt="pstyle"></div>
-        <div class="card pstyle-card"><img src="https://xatimg.com/image/QXaAZtDQ0vUI.png" alt="pstyle"></div>
-        <div class="card pstyle-card"><img src="https://xatimg.com/image/QXaAZtDQ0vUI.png" alt="pstyle"></div>
-      </div>
+  <div id="pstyle" class="content page" style="display:none;">
+    <div class="section">
+      <div class="pstyle-box"><img src="https://xatimg.com/image/QXaAZtDQ0vUI.png" alt="pstyle" /></div>
+      <div class="pstyle-box"><img src="https://xatimg.com/image/QXaAZtDQ0vUI.png" alt="pstyle" /></div>
+      <div class="pstyle-box"><img src="https://xatimg.com/image/QXaAZtDQ0vUI.png" alt="pstyle" /></div>
     </div>
+  </div>
 
-    <div id="pcback" class="page">
-      <div class="gallery">
-        <div class="card pcback-card"><img src="https://xatimg.com/image/nkaHRxWK4lGq.png" alt="pcback"></div>
-        <div class="card pcback-card"><img src="https://xatimg.com/image/nkaHRxWK4lGq.png" alt="pcback"></div>
-        <div class="card pcback-card"><img src="https://xatimg.com/image/5gTd1NtVWxae.png" alt="pcback"></div>
-      </div>
+  <div id="pcback" class="content page" style="display:none;">
+    <div class="section">
+      <div class="pcback-box"><img src="https://xatimg.com/image/nkaHRxWK4lGq.png" alt="pcback" /></div>
+      <div class="pcback-box"><img src="https://xatimg.com/image/nkaHRxWK4lGq.png" alt="pcback" /></div>
+      <div class="pcback-box"><img src="https://xatimg.com/image/5gTd1NtVWxae.png" alt="pcback" /></div>
     </div>
   </div>
 
   <footer>
-    &copy; 2025 Error. All rights reserved.
+    &copy; 2025 ErrorJunior. All rights reserved.
   </footer>
 
   <script>
     function showPage(pageId) {
       const pages = document.querySelectorAll('.page');
-      pages.forEach(page => {
-        page.classList.remove('active');
-      });
-      document.getElementById(pageId).classList.add('active');
+      pages.forEach(page => page.style.display = 'none');
+      document.getElementById(pageId).style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
+
 </body>
 </html>

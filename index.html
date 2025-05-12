@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Error - Home</title>
+  <title>Error - Gallery</title>
   <style>
     body {
       background-image: url('https://xatimg.com/image/oNRwyF0WEjkh.png');
@@ -11,6 +11,7 @@
       margin: 0;
       font-family: 'Oswald', sans-serif;
       color: #fff;
+      overflow-x: hidden;
     }
 
     * {
@@ -38,6 +39,11 @@
       border-radius: 50%;
       border: 3px solid #fff;
       object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .jd-header img.avatar:hover {
+      transform: scale(1.1);
     }
 
     .jd-header h1 {
@@ -55,7 +61,7 @@
       position: fixed;
       top: 220px;
       width: 100%;
-      background: rgba(51, 51, 51, 0.8);
+      background: linear-gradient(to right, #6699cc, #b0bec5);
       display: flex;
       justify-content: center;
       gap: 20px;
@@ -67,18 +73,19 @@
       color: white;
       text-decoration: none;
       padding: 8px 16px;
-      background-color: #333;
+      background-color: #444;
       border-radius: 5px;
       transition: background 0.3s;
     }
 
     .jd-content a:hover {
-      background-color: #555;
+      background-color: #222;
     }
 
     .jd-main {
       margin-top: 300px;
       padding: 20px;
+      min-height: calc(100vh - 360px);
     }
 
     .jd-boxes {
@@ -92,10 +99,11 @@
       width: 110px;
       height: 130px;
       background: linear-gradient(to bottom right, #6699cc, #b0bec5);
-      box-shadow: 0 0 4px rgba(0,0,0,0.3);
+      box-shadow: 0 0 6px rgba(0,0,0,0.4);
       padding: 14px;
       position: relative;
       border-radius: 8px;
+      animation: fadeIn 0.5s ease-in-out;
     }
 
     .jd-box img {
@@ -118,25 +126,77 @@
       border-radius: 3px;
     }
 
+    .pstyle-box {
+      width: 300px;
+      height: 100px;
+      background: linear-gradient(to bottom right, #6699cc, #b0bec5);
+      box-shadow: 0 0 6px rgba(0,0,0,0.4);
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .pstyle-box img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .pcback-box {
+      width: 728px;
+      height: 484px;
+      margin-bottom: 20px;
+      background: linear-gradient(to bottom right, #6699cc, #b0bec5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .pcback-box img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .jd-footer {
+      background: linear-gradient(to bottom right, #6699cc, #b0bec5);
+      text-align: center;
+      padding: 10px;
+      color: #222;
+      font-size: 0.85rem;
+    }
+
+    #homeContent,
     #pstyleContent,
-    #homeContent {
+    #pcbackContent {
       display: none;
     }
 
     .active-page {
       display: block !important;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 
   <script>
     function showPage(pageId) {
-      document.getElementById('homeContent').classList.remove('active-page');
-      document.getElementById('pstyleContent').classList.remove('active-page');
+      const pages = ['homeContent', 'pstyleContent', 'pcbackContent'];
+      pages.forEach(id => {
+        document.getElementById(id).classList.remove('active-page');
+      });
       document.getElementById(pageId).classList.add('active-page');
     }
 
     window.onload = () => {
-      showPage('homeContent'); // show home by default
+      showPage('homeContent');
     };
   </script>
 </head>
@@ -151,6 +211,7 @@
   <div class="jd-content">
     <a href="#" onclick="showPage('homeContent')">Home</a>
     <a href="#" onclick="showPage('pstyleContent')">PStyle</a>
+    <a href="#" onclick="showPage('pcbackContent')">PcBack</a>
   </div>
 
   <div class="jd-main">
@@ -160,18 +221,28 @@
         <div class="jd-box"><img src=".gif"><span>BT-01</span></div>
         <div class="jd-box"><img src=".gif"><span>BT-02</span></div>
         <div class="jd-box"><img src=".gif"><span>BT-03</span></div>
-        <!-- Mai adaugă aici după nevoie -->
       </div>
     </div>
 
     <!-- PStyle Section -->
     <div id="pstyleContent">
       <div class="jd-boxes">
-        <div class="jd-box"><img src="https://xatimg.com/image/f7mg2bfTsSce.png"><span>PS-01</span></div>
-        <div class="jd-box"><img src="https://xatimg.com/image/f7mg2bfTsSce.png"><span>PS-02</span></div>
-        <!-- Mai adaugă aici după nevoie -->
+        <div class="pstyle-box"><img src="https://xatimg.com/image/f7mg2bfTsSce.png"></div>
+        <div class="pstyle-box"><img src="https://xatimg.com/image/f7mg2bfTsSce.png"></div>
       </div>
     </div>
+
+    <!-- PcBack Section -->
+    <div id="pcbackContent">
+      <div class="jd-boxes">
+        <div class="pcback-box"><img src="https://xatimg.com/image/oNRwyF0WEjkh.png"></div>
+        <div class="pcback-box"><img src="https://xatimg.com/image/oNRwyF0WEjkh.png"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="jd-footer">
+    &copy; 2025 ErrorJunior. All rights reserved.
   </div>
 </body>
 </html>
